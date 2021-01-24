@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORT</title> 
+</head>
+<body>
+    <h1 class="h1">Welcome </h1>
+    <h2 class="h2"> SPORT TEAM </h2>
+    <form action="https://formspree.io/f/moqpkgzq" method="post">
+        <label> Order Number:<br> </label>   
+            <input type="text" name="orderNumber" value="29760734" disabled>
+            <br>
+            <br> 
+            <label> Name:<br></label>
+            <input type="text" name="name"  maxlength="20" placeholder ="Enter your first name here"> 
+            <br>
+            <label> Last Name:<br></label>
+            <input type="text" name="lastName" maxlength="20" placeholder ="Enter your last name here"> 
+            <br>
+            <br> 
+            <label>Type of cloth:</label><br>
+            <input type="radio" id="shirt" name="typeCloth" value="shirt" checked> 
+            <label>shirt</label><br> 
+            <input type="radio" id="shirt" name="typeCloth" value="undershirt">
+            <label>undershirt</label><br> 
+            <input type="radio" id="shirt" name="typeCloth" value="hoodie"> 
+            <label> hoodie</label><br> 
+            <input type="radio" id="shirt" name="typeCloth" value="sweater"> 
+            <label> sweater</label><br> 
+            <input type="radio" id="shirt" name="typeCloth" value="coat"> 
+            <label>coat</label>
+            <br>
+            <br>
+            <label>color:</label><br>
+            <select id="color" name= "color">
+                <option value="red" >red</option> 
+                <option value="green">green</option>
+                <option value="blue">blue</option>
+                <option value="white" selected>white</option>
+            </select> 
+            <br>
+            <br> 
+            <label>size:</label><br>
+            <input type="radio" id="sizeS" name="size" value="sizeS">
+            <label>S</label><br> 
+            <input type="radio" id="sizeM" name="size" value="sizeM">
+            <label>M</label><br> 
+            <input type="radio" id="sizeL" name="size" value="sizeL"> 
+            <label>L</label><br> 
+            <input type="radio" id="sizeXL" name="size" value="sizeXL"> 
+            <label>XL</label>
+            <br> 
+            <br> 
+            <label >Logo Position on the clothing:</label> <br> 
+            <input type="checkbox" id="logoPlace1"  name="logoPlace"   value="logoPlace"> 
+            <label>Back of Clothing </label><br> 
+            <input type="checkbox" id="logoPlace2" name="logoPlace" value="logoPlace">
+            <label>Rear of the Clothing</label><br> 
+            <input type="checkbox" id="logoPlace3" name="logoPlace" value="logoPlace">
+            <label>Right Sleeve</label><br>
+            <input type="checkbox" id="logoPlace4" name="logoPlace" value="logoPlace">
+            <label>Left Sleeve</label><br> 
+            <label>Adress:</label> 
+            <br>
+            <br>
+            <textarea id="Adress" name="Address" rows="10" cols="30" placeholder="Enter your address"></textarea>
+            <br>
+            <button type="submit">Send The Order</button>
+            <button type="reset">Start Over</button>
+    </form>
+   
+</body>
+</html>

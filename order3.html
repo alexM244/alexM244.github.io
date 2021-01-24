@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORT</title> 
+    <script>
+        function countThePrice(){
+            var typeCloth= document.getElementsByName("typeCloth");
+            var color= document.getElementsByName("color");
+            color = color[0].value;
+            console.log(color);
+            var size= document.getElementsByName("size");
+            var logoPlace= document.getElementsByName("logoPlace");
+            var logoPlaceAllcount=Number(0);
+            var amount= document.getElementById("amount").value;
+            //console.log(logoPlace.length);
+            
+            for(var i = 0; i < logoPlace.length; i++)
+            {
+                if(logoPlace[i].checked)
+                {
+                logoPlaceAllcount += 3;
+                //console.log("logoPlaceAllcount inn "+logoPlaceAllcount);
+                }  
+            }
+            for(var i = 0; i < size.length; i++)
+            {
+                if(size[i].checked)
+                {
+                    size=size[i].value;
+                    break;
+                }  
+            }
+            for(var i = 0 ;i < typeCloth.length; i++)
+            {
+                if(typeCloth[i].checked)
+                {
+                    typeCloth= typeCloth[i].value;
+                    break;
+                }
+            }
+            console.log("typeCloth "+typeCloth);
+            console.log("size "+size);
+            console.log("color "+color);
+            console.log("logoPlaceAllcount "+logoPlaceAllcount);
+            console.log("amount "+amount);
+
+        var priceCalc = Number(amount)*(Number(size)*(Number(color)+Number(typeCloth)+Number(logoPlaceAllcount)));
+        showPrice(priceCalc);
+        }
+        function showPrice(priceCalc){
+            var endPrice= document.getElementById("endPrice");
+            endPrice.innerText = "the price is: " + priceCalc; 
+        }
+    </script>
+</head>
+<body>
+    <h1 class="h1">Welcome </h1>
+    <h2 class="h2"> SPORT TEAM </h2>
+    <form action="https://formspree.io/f/moqpkgzq" method="post">
+        <label> Order Number:<br> </label>   
+            <input type="text" name="orderNumber" value="29760734" disabled>
+            <br>
+            <br> 
+            <label> Name:<br></label>
+            <input type="text" name="name"  maxlength="20" placeholder ="Enter your first name here"> 
+            <br>
+            <label> Last Name:<br></label>
+            <input type="text" name="lastName" maxlength="20" placeholder ="Enter your last name here"> 
+            <br>
+            <br> 
+            <label>Type of cloth:</label><br>
+            <input type="radio" id="shirt" name="typeCloth" value="10" checked> 
+            <label>shirt - 10 shekel</label><br> 
+            <input type="radio" id="undershirt" name="typeCloth" value="10">
+            <label>undershirt - 10 shekel</label><br>
+            <input type="radio" id="sweater" name="typeCloth" value="20"> 
+            <label> sweater- 20 shekel</label><br> 
+            <input type="radio" id="hoodie" name="typeCloth" value="30"> 
+            <label> hoodie - 30 shekel</label><br> 
+            <input type="radio" id="coat" name="typeCloth" value="50"> 
+            <label> coat- 50 shekel</label>
+            <br>
+            <br>
+            <label>color:</label><br>
+            <select id="color" name= "color">
+                <option id="red"    name="color" value="0" >red -no extra charge</option> 
+                <option id="green"  name="color" value="5">green -  +5 shekel</option>
+                <option id="blue"   name="color" value="-2">blue - -2shekel discount</option>
+                <option id="white"  name="color" value="0" selected>white -no extra charge</option>
+            </select> 
+            <br>
+            <br> 
+            <label>size:</label><br>
+            <input type="radio" id="sizeS" name="size" value="0.9">
+            <label>S - 10% discount  </label><br> 
+            <input type="radio" id="sizeM" name="size" value="1">
+            <label>M -no extra charge</label><br> 
+            <input type="radio" id="sizeL" name="size" value="1"> 
+            <label>L -no extra charge</label><br> 
+            <input type="radio" id="sizeXL" name="size" value="1.1"> 
+            <label>XL - 10% extra charge</label>
+            <br> 
+            <br> 
+            <label >Logo Position on the clothing: evry logo - 3 shekel</label> <br> 
+            <input type="checkbox" id="logoPlace1"  name="logoPlace"   value="logoPlace"> 
+            <label>Back of Clothing </label><br> 
+            <input type="checkbox" id="logoPlace2" name="logoPlace" value="logoPlace">
+            <label>Rear of the Clothing</label><br> 
+            <input type="checkbox" id="logoPlace3" name="logoPlace" value="logoPlace">
+            <label>Right Sleeve</label><br>
+            <input type="checkbox" id="logoPlace4" name="logoPlace" value="logoPlace">
+            <label>Left Sleeve</label><br> 
+            <label>Adress:</label> 
+            <br>
+            <br>
+            <label>amount of the items: </label>
+            <input type="text" id="amount" name="amount" placeholder="1" size="6"  value="1">
+            <br>
+            <br>
+            <input type="button" onclick="countThePrice()" value="count the price" size="4">
+            <br>
+            <div id="endPrice">the price is:</div>
+            <br>
+            <textarea id="Adress" name="Address" rows="10" cols="30" placeholder="Enter your address"></textarea>
+            <br>
+            <button type="submit">Send The Order</button>
+            <button type="reset">Start Over</button>
+    </form>
+   
+</body>
+</html>
